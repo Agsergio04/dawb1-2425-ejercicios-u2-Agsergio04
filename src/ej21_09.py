@@ -18,19 +18,16 @@ def main():
     bandera = None
 
     while bandera:
-        try:
-            edad = pedir_edad()
+        
+        edad = pedir_edad()
 
-            if edad == 0:
-                break
-            if edad < 0:
-                raise ValueError("**ERROR**\nIntroduce una edad valida.")
+        if edad == 0:
+            break
+        if edad < 0:
+            print("**ERROR**\nIntroduce una edad valida.")
 
-            mensaje = calcular_precio(edad)
+        mensaje = calcular_precio(edad)
 
-            print(f"Tienes {edad} años,asi que {mensaje}") 
-
-        except ValueError as mensaje:
-            print(mensaje)    
+        print(f"Tienes {edad} años,asi que {mensaje}")
 if __name__ == "__main__":
     main()

@@ -16,17 +16,13 @@ def calculo_tipo_impositivo(entrada):
     return calculo
 
 def main():
-    try:
-        entrada = float(input("Introduce tu nómina anual: "))
-        improvisto = calculo_tipo_impositivo(entrada)
+    entrada = float(input("Introduce tu nómina anual: "))
+    improvisto = calculo_tipo_impositivo(entrada)
         
-        if improvisto is None: 
-            raise ValueError("Introduce un número que no sea negativo")
-        else:
-            print(f"Tu impuesto es del {improvisto} %")
-    
-    except ValueError as mensaje:
-        print(mensaje)
+    if improvisto is None: 
+        print("Introduce un número que no sea negativo")
+    else:
+        print(f"Tu impuesto es del {improvisto} %")
 
 if __name__ == "__main__":  
     main()

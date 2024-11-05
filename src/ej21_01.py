@@ -3,25 +3,27 @@ Escribir un programa que pregunte al usuario su edad y muestre por pantalla si e
 """
 
 def comprobar_edad(edad):
-    condicion = True
-    try:
-        int(edad)
-        if int(edad) < 18 :
-            condicion = False
+    condicion = None
+
+    edad = int(edad)
     
-    except ValueError:
-        print("*ERROR* Introduce un numero.")
+    if edad < 18 :
+        condicion = False
+    elif 0 < edad < 18:
+        condicion = True
   
     return condicion
    
     
 def main():
-    edad = input("Introduce tu edad: ")
+    
+    edad = int(input("Introduce tu edad: "))
 
     if comprobar_edad(edad) == True:
         print("Eres mayor de edad.")
     elif comprobar_edad(edad) == False:
         print("Eres menor de edad.")
-
+    else:
+        print("*ERROR* Introduce un numero.")
 if  __name__ == "__main__":
     main()

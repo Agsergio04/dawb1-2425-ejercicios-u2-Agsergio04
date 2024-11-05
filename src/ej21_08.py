@@ -27,25 +27,24 @@ def main():
     bandera = True
 
     while bandera:
-        try:
-            numero = pedir_numero()
+        
+        numero = pedir_numero()
 
-            if numero.lower() == "fin":
-                break
+        if numero.lower() == "fin":
+            break
            
-            tipo = determinar_tipo(float(numero))
-            sueldo = calcular_sueldo(float(numero))
+        tipo = determinar_tipo(float(numero))
+        sueldo = calcular_sueldo(float(numero))
 
-            print(f"Tu tipo es {tipo} y tu sueldo es {sueldo} euros")
+        print(f"Tu tipo es {tipo} y tu sueldo es {sueldo} euros")
 
-            if float(numero) < 0:
-                raise ZeroDivisionError("**ERROR**\nIntroduce un numero positivo")
-            if numero.lower() == "salir":
-                bandera = False
-        except ValueError:
-            print("**ERROR**\nIntroduce un numero valido.")
-        except ZeroDivisionError as mensaje:
-            print(mensaje)
+        if float(numero) < 0:
+            raise ZeroDivisionError("**ERROR**\nIntroduce un numero positivo")
+        if numero.lower() == "salir":
+            bandera = False
+        
+        print("**ERROR**\nIntroduce un numero valido.")
+        
         
         
 if __name__ == "__main__":

@@ -24,15 +24,8 @@ def pedir_edad_y_tributacion():
 
 
 def main():
-    bandera = True
-    while bandera:
-        try:
-            edad,sueldo = pedir_edad_y_tributacion()
-            bandera = False
-        except ValueError:
-            print("Por favor escribe un valor valido")
-            
-            
+        
+    edad,sueldo = pedir_edad_y_tributacion()        
     if comprobar_edad(edad) and comprobar_tributacion(sueldo):
         print("Por desgracia...Tienes que tribuar\nQue mal")
     else:

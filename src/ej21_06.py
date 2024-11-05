@@ -20,25 +20,23 @@ def elegir_aula(entrada, genero):
     return aula
 
 def main():
-    try:
-        nombre = input("Introduce tu nombre: ")
+    
+    nombre = input("Introduce tu nombre: ")
         
-        if nombre.isdigit():
-            raise ValueError("**ERROR**\nPor favor Introduce un Nombre valido.")
+    if nombre.isdigit():
+        print("**ERROR**\nPor favor Introduce un Nombre valido.")
         
-        sexo = input("Introduce tu genero (hombre/mujer): ")
+    sexo = input("Introduce tu genero (hombre/mujer): ")
         
-        genero = definir_genero(sexo)
+    genero = definir_genero(sexo)
         
-        if genero is None:
-            raise ValueError("**ERROR**\nPor favor Introduce un genero Valido.")
+    if genero is None:
+        print("**ERROR**\nPor favor Introduce un genero Valido.")
         
-        aula = elegir_aula(nombre, genero) 
+    aula = elegir_aula(nombre, genero) 
         
-    except ValueError as e:
-        print(e)  
-    else:
-        print(f"{nombre} eres del aula {aula}")
+    
+    print(f"{nombre} eres del aula {aula}")
 
 if __name__ == "__main__":
     main()
